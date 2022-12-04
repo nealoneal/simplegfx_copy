@@ -1,0 +1,37 @@
+<!--add_social.html socials-->
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="jumbotron">
+    <div class="container">
+        <div class="container-fluid">
+            <h1 class="display-4">Social Bugs </h1>
+        <p class="lead">CIS - {{ session['cis'] }} </p>
+            <p>{{session.project_name}}</p>
+
+        <hr class="my-4">
+            <form  method="POST">
+                <div class="row container-fluid">
+                <div class="col-lg" style="padding: 10px 10px 20px 0px">
+                    {{ form.hidden_tag() }}
+
+                    {{ form.text }} <br>
+                        <p></p>
+                    {{ form.submit }}
+                </div>
+                    <div class="col-lg" style="padding: 10px 10px 20px 0px">
+                        <p class="lead">Social Bugs:
+                        </p>
+                        {% for bug in socials %}
+                        {{ bug }} <br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+

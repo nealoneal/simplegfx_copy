@@ -1,0 +1,58 @@
+<!--view_all.html view_all-->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="container-fluid">
+            <h1 class="display-4">Graphics List </h1>
+        <p class="lead">CIS - {{ project.cis}} </p>
+            <p>{{ project.project_name }}</p>
+
+     <form action="{{ url_for('view_all.create_pptx') }}">
+        <button type="submit" class="btn btn-success">Create PPTX Document</button>
+        </form>
+        <hr class="my-4">
+
+            <form  method="POST">
+
+                <div style="padding: 10px 10px 20px 0px">
+                    <p class="lead">Name Keys: </p>
+                {% for name_key in name_keys %}
+                    {{ name_key }} <br>
+                    {% endfor %}
+                    <p></p><br><hr class="my-4">
+                    <p class="lead">Bugs:</p>
+                    {% for bug in bugs_list %}
+                    {{ bug }}
+                    {% endfor %}
+                    <p></p><br><hr class="my-4">
+                    <p class="lead">Social Bugs:</p>
+                    {% for social in socials %}
+                    {{ social }} <br>
+                    {% endfor %}
+                    <p></p><br><hr class="my-4">
+                    <p class="lead">Slido Event Codes:</p>
+                    {% for event_code in slidos %}
+                    {{ event_code }} <br>
+                    {% endfor %}
+                    <p></p><br><hr class="my-4">
+                    <p class="lead">Locators:</p>
+                    {% for locator in locators %}
+                    {{ locator }} <br>
+                    {% endfor %}
+                    <p></p><br><hr class="my-4">
+                    <p class="lead">URLs:</p>
+                    {% for url in urls %}
+                    {{ url }} <br>
+                    {% endfor %}
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

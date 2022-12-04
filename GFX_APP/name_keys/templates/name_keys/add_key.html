@@ -1,0 +1,63 @@
+<!--add_key.html name_keys-->
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="jumbotron">
+    <div class="container">
+        <div class="container-fluid">
+            <h1 class="display-4">Name Key Information </h1>
+        <p class="lead">CIS - {{ session['cis'] }} </p>
+            <p>{{session.project_name}}</p>
+
+        <hr class="my-4">
+            <form  method="POST">
+                <div class="row container-fluid">
+                <div class="col-lg" style="padding: 10px 10px 20px 0px">
+                    {{ form.hidden_tag() }}
+<!--                    {{ form.name.label }} <br>-->
+                    {{ form.name }} <br>
+                    <p></p>
+<!--                    {{ form.title.label }} <br>-->
+                    {{ form.title }} <br>
+                    <p></p>
+<!--                    {{ form.company.label }} <br>-->
+                    {{ form.company }} <br>
+                    <p></p>
+
+                    {{ form.submit }}
+                </div>
+                <div class="col-lg" style="padding: 10px 10px 20px 0px">
+
+                    {{ form.left_aligned }}
+                    {{ form.left_aligned.label }}
+                     <br>
+
+                    {{ form.right_aligned }}
+                    {{ form.right_aligned.label }}
+                     <br>
+
+                    {{ form.otp }}
+                    {{ form.otp.label }}
+                     <br>
+                    <p></p>
+                </div>
+                    <div class="col-md-6" style="padding: 0px 10px 20px 0px">
+                        <p class="lead">Graphics List: </p>
+                        {% for name_key in name_key_rows %}
+                        {{ name_key }} <br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+<!--class AddCISForm(FlaskForm):-->
+<!--    cis = IntegerField('Cis:', validators=[InputRequired()])-->
+<!--    project_name = StringField('Project Name:')-->
+<!--    -->
+<!--    submit = SubmitField('Save Info')-->

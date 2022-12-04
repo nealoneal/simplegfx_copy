@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="jumbotron">
+    <div class="container">
+
+        <h1 class="display-4">Project Information</h1>
+        <p class="lead">Please complete all fields.</p>
+        <hr class="my-4">
+            <form method="POST">
+                <div style="padding-right: 0px">
+                    {{ form.hidden_tag() }}
+<!--                    {{ form.cis.label }}-->
+                    {{ form.cis }} <br>
+
+                    <p></p>
+<!--                    {{ form.project_name.label }} -->
+                    {{ form.project_name }} <br>
+
+                    <p></p>
+<!--                    {{ form.producer.label }} <br>-->
+                    {{ form.producer }} <br><p></p>
+                    {{ form.submit }}
+                    </div>
+            </form>
+
+    </div>
+    </div>
+
+{% endblock %}
+r')-->
