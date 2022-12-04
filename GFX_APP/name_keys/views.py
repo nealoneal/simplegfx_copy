@@ -33,7 +33,7 @@ def add_key():
         with app.app_context():
             db.session.add(new_name_key)
             db.session.commit()
-        name_key_rows = NameKey.query.filter_by(cis_id=cis).all()
+        name_key_rows = NameKey.query.filter_by(cis_id=cis_id).all()
         try:
             return render_template('add_key.html', form=form, name_key_rows=name_key_rows)
         except:
